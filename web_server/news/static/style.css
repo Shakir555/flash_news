@@ -1,0 +1,230 @@
+/* Flash News Web Style */
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Impact', sans-serif;
+    background: #222;
+    color: #fff;
+    line-height: 1.6;
+    font-size: 16px;
+    /* Grunge background texture */
+    background-image: url('https://www.transparenttextures.com/patterns/black-linen-rough.png');
+    background-size: cover;
+}
+
+/* Header */
+header {
+    /* Slight opacity for grunge effect */
+    background-color: rgba(244, 197, 66, 0.9);
+    color: #222;
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 5px solid #b4963d;
+    position: relative;
+    /* Add gradient overlay */
+    background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png'),
+                      linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.7));
+    background-size: 150px, cover;
+}
+
+/* Gradient Overlay (added to enhance the visual) */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Dark gradient overlay */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    z-index: 1;
+}
+
+/* Header Content */
+header .header-container {
+    position: relative;
+    /* Ensures content is above the gradient overlay */
+    z-index: 2;
+}
+
+/* Flash Headline Effect */
+.flash-headline {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    /* Yellow-white flash effect */
+    text-shadow: 0 0 10px #f4e10a, 0 0 20px #f4e10a, 0 0 30px #f4e10a, 0 0 40px #f4e10a;
+    /* Flashing animation */
+    animation: flashAnimation 1.5s infinite alternate;
+    letter-spacing: 2px;
+    /* Comic, graffiti-like font */
+    font-family: 'Bangers', sans-serif;
+}
+
+/* Header-container Tagline */
+header .header-container .tagline {
+    font-size: 1.2rem;
+    color: #f8e71c;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    background: #1f1f1f;
+    min-height: 100vh;
+}
+
+/* News Container */
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* News Card Styling */
+.news-card {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    border: 5px solid #f4c542;
+    border-radius: 10px;
+    overflow: hidden;
+    /* Rough background inside the card */
+    background-image: url('https://www.transparenttextures.com/patterns/diamond-squares.png');
+}
+
+/* News Card Hover */
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Image Container for Tuff Style */
+.image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 3px solid #f4c542;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Tuff texture on images */
+    background-image: url('https://www.transparenttextures.com/patterns/black-linen-rough.png');
+    background-size: cover;
+    position: relative;
+}
+
+/* Article Imager */
+.article-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.5) saturate(1.2);
+    border: 2px solid #f4c542;
+    border-radius: 5px;
+}
+
+/* Title */
+.news-title {
+    font-size: 2rem;
+    color: #f4c542;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    letter-spacing: 3px;
+    /* Graffiti font */
+    font-family: 'Bangers', sans-serif;
+}
+
+/* Date */
+.date {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 15px;
+    font-style: italic;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Content */
+.content {
+    font-size: 1rem;
+    color: #ddd;
+    line-height: 1.6;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* No News Available */
+.no-news {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #f4c542;
+    margin-top: 50px;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #f4c542;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 1.1rem;
+    border-top: 5px solid #f4c542;
+    position: relative;
+}
+
+/* Hover Effects */
+.news-card:hover .article-image {
+    filter: contrast(1.7) saturate(1.4);
+}
+
+/* Flash Animation */
+@keyframes flashAnimation {
+    0% {
+        text-shadow: 0 0 10px #f4e10a, 0 0 20px #f4e10a, 0 0 30px #f4e10a, 0 0 40px #f4e10a;
+    }
+    50% {
+        text-shadow: 0 0 20px #f4e10a, 0 0 40px #f4e10a, 0 0 60px #f4e10a, 0 0 80px #f4e10a;
+    }
+    100% {
+        text-shadow: 0 0 10px #f4e10a, 0 0 20px #f4e10a, 0 0 30px #f4e10a, 0 0 40px #f4e10a;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .news-card {
+        padding: 15px;
+    }
+
+    .news-title {
+        font-size: 1.6rem;
+    }
+
+    .content {
+        height: 100px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}
