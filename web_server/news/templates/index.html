@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flash News</title>
-    {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
@@ -18,12 +18,18 @@
         <div class="news-container">
             {% for article in articles %}
             <article class="news-card">
-                <div class="image-container">
-                    <img src="{{ article.image_url }}" alt="{{ article.title }}" class="article-image">
-                </div>
                 <h2 class="news-title">{{ article.title }}</h2>
                 <p class="date">Published: {{ article.published_date|date:"F d, Y H:i" }}</p>
+
+                <!-- Embed image directly from the URL -->
+                {% if article.image_url %}
+                    <div class="image-container">
+                        <img src="{{ article.image_url }}" alt="{{ article.title }}" class="article-image">
+                    </div>
+                {% endif %}
+
                 <p class="content">{{ article.content }}</p>
+                <a href="{{ article.url }}" target="_blank" class="read-more">Read more</a>
             </article>
             {% empty %}
             <p class="no-news">No news articles available at the moment.</p>
@@ -31,7 +37,7 @@
         </div>
     </main>
     <footer>
-        <p>© 2025 Flash News. All Rights Reserved.</p>
+        <p>News provided by <a href="https://newsapi.org" target="_blank">News API</a></p>
     </footer>
 </body>
 </html>

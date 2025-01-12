@@ -1,17 +1,30 @@
-# Libraries
+import requests
 from django.shortcuts import render
 
-# Request index.html
+# Request index.html with articles from News API
 def index(request):
-    articles = [
-        {'title': 'First News Article', 'content': 'This is the first article content.', 'published_date': '2025-01-12'},
-        {'title': 'Second News Article', 'content': 'This is the second article content.', 'published_date': '2025-01-11'},
-        {'title': 'Third News Article', 'content': 'This is the third article content.', 'published_date': '2025-01-10'},
-        {'title': 'Fourth News Article', 'content': 'This is the fourth article content.', 'published_date': '2025-01-09'},
-        {'title': 'Fifth News Article', 'content': 'This is the fifth article content.', 'published_date': '2025-01-08'},
-        {'title': 'Sixth News Article', 'content': 'This is the sixth article content.', 'published_date': '2025-01-07'},
-        {'title': 'Seventh News Article', 'content': 'This is the seventh article content.', 'published_date': '2025-01-06'},
-        {'title': 'Eight News Article', 'content': 'This is the eight article content.', 'published_date': '2025-01-06'},
-        {'title': 'Nine News Article', 'content': 'This is the nine article content.', 'published_date': '2025-01-06'},
-    ]
-    return render(request, 'index.html', {'articles': articles})
+    API_KEY = '26b86b8236fc49cf80449fb701424d7a'  # Replace with your News API key
+    URL = f'https://newsapi.org/v2/top-headlines?country=us&apiKey={API_KEY}'
+
+    try:
+        response = requests.get(URL)
+        response.raise_for_status()
+        data = response.json()
+
+        # Extract articles from the response
+        articles = data.get('articles', [])
+        news_articles = [
+            {
+                'title': article.get('title', 'No Title'),
+                'content': article.get('description', 'No Content'),
+                'published_date': article.get('publishedAt', 'No Date'),
+                'url': article.get('url', '#'),
+                'image_url': article.get('urlToImage', None),  # Corrected key here
+            }
+            for article in articles
+        ]
+    except requests.exceptions.RequestException as e:
+        news_articles = []
+        print(f"Error fetching news: {e}")
+
+    return render(request, 'index.html', {'articles': news_articles})
