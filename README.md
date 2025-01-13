@@ -35,8 +35,8 @@ Follow these steps to set up and run the Flash News application locally:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/flash-news.git
-cd flash-news
+git clone https://github.com/Shakir555/flash_news.git
+cd flash_news
 ```
 
 ### 2. Start the Development Server
