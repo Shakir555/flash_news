@@ -184,8 +184,6 @@ urlpatterns = [
 
 ---
 
----
-
 ## Future Enhancements
 - User authentication for personalized news feeds.
 - Add support for news categories.
@@ -199,5 +197,5 @@ This project is licensed under the MIT License. Feel free to use, modify, and di
 ---
 
 ## Support
-If you encounter any issues, feel free to [open an issue](https://github.com/yourusername/flash-news/issues) or reach out to me at [your.email@example.com](mailto:your.email@example.com).
+If you encounter any issues, feel free to [open an issue](https://github.com/shakir555/flash-news/issues).
 
