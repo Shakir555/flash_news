@@ -143,15 +143,15 @@ main {
 
 /* Title */
 .news-title {
-    font-size: 2rem;
+    font-size: 1.2rem; /* Slightly increase size for better visibility */
     color: #f4c542;
     text-transform: uppercase;
     margin-bottom: 10px;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    letter-spacing: 3px;
-    /* Graffiti font */
-    font-family: 'Bangers', sans-serif;
+    font-weight: 700; /* Make it bolder for stronger emphasis */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Enhance shadow for more depth */
+    letter-spacing: 2px; /* Reduce spacing for a cleaner look */
+    /* Bold and graffiti-like font */
+    font-family: 'Permanent Marker', sans-serif;
 }
 
 /* Date */

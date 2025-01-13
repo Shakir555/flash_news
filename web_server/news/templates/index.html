@@ -6,6 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flash News</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+        /* Ensure the article card is clickable */
+        .news-card {
+            cursor: pointer;
+            text-decoration: none; /* Remove underline on text */
+            color: inherit; /* Inherit text color for links */
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        /* Add hover effect for the card */
+        .news-card:hover {
+            transform: scale(1.02); /* Slightly enlarge on hover */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,20 +32,22 @@
     <main>
         <div class="news-container">
             {% for article in articles %}
-            <article class="news-card">
-                <h2 class="news-title">{{ article.title }}</h2>
-                <p class="date">Published: {{ article.published_date|date:"F d, Y H:i" }}</p>
+            <!-- Make the whole card clickable -->
+            <a href="{{ article.url }}" target="_blank" class="news-card">
+                <article>
+                    <h2 class="news-title">{{ article.title }}</h2>
+                    <p class="date">Published: {{ article.published_date|date:"F d, Y H:i" }}</p>
 
-                <!-- Embed image directly from the URL -->
-                {% if article.image_url %}
-                    <div class="image-container">
-                        <img src="{{ article.image_url }}" alt="{{ article.title }}" class="article-image">
-                    </div>
-                {% endif %}
+                    <!-- Embed image directly from the URL -->
+                    {% if article.image_url %}
+                        <div class="image-container">
+                            <img src="{{ article.image_url }}" alt="{{ article.title }}" class="article-image">
+                        </div>
+                    {% endif %}
 
-                <p class="content">{{ article.content }}</p>
-                <a href="{{ article.url }}" target="_blank" class="read-more">Read more</a>
-            </article>
+                    <p class="content">{{ article.content }}</p>
+                </article>
+            </a>
             {% empty %}
             <p class="no-news">No news articles available at the moment.</p>
             {% endfor %}
@@ -38,6 +55,7 @@
     </main>
     <footer>
         <p>News provided by <a href="https://newsapi.org" target="_blank">News API</a></p>
+        <p>© 2025 Flash News. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
