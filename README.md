@@ -193,5 +193,5 @@ This project is licensed under the MIT License. Feel free to use, modify, and di
 ---
 
 ## Support
-If you encounter any issues, feel free to [open an issue](https://github.com/shakir555/flash-news/issues).
+If you encounter any issues, feel free to [open an issue](https://github.com/Shakir555/flash_news/issues).
 
