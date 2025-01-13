@@ -39,32 +39,7 @@ git clone https://github.com/yourusername/flash-news.git
 cd flash-news
 ```
 
-### 2. Create a Virtual Environment
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-### 3. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Configure the API Key
-- Create a `.env` file in the project root directory.
-- Add your **News API key** to the `.env` file:
-
-```env
-NEWS_API_KEY=your_news_api_key
-```
-
-### 5. Run Migrations
-```bash
-python manage.py makemigrations
-python manage.py migrate
-```
-
-### 6. Start the Development Server
+### 2. Start the Development Server
 ```bash
 python manage.py runserver
 ```
@@ -208,13 +183,6 @@ urlpatterns = [
 - Follow the deployment guides for Django and configure your API keys in environment variables.
 
 ---
-
-## Screenshots
-1. **Homepage:**
-   Displays a list of news articles with titles, descriptions, and links.
-
-2. **Responsive Design:**
-   Adapts seamlessly to different screen sizes.
 
 ---
 
