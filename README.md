@@ -1,6 +1,6 @@
 # Flash News
 
-Flash News is a dynamic and responsive web application built using the Django framework. It allows users to stay updated with the latest news in real-time by leveraging the power of the News API for fetching news articles. The app features a user-friendly interface designed with HTML and CSS for seamless navigation and an engaging user experience.
+Flash News is a dynamic and responsive web application built using the Django framework. It allows users to stay updated with the latest news in real-time by leveraging the power of the News API for fetching news articles. The app features a unique borderland style interface designed with HTML and CSS for seamless navigation and an engaging user experience.
 
 ---
 
