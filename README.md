@@ -178,10 +178,6 @@ urlpatterns = [
 ]
 ```
 
-### 9. Deploy the Application
-- Use platforms like **Heroku** or **PythonAnywhere** to deploy your project.
-- Follow the deployment guides for Django and configure your API keys in environment variables.
-
 ---
 
 ## Future Enhancements
