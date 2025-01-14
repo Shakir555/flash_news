@@ -19,7 +19,7 @@ def index(request):
                 'content': article.get('description', 'No Content'),
                 'published_date': article.get('publishedAt', 'No Date'),
                 'url': article.get('url', '#'),
-                'image_url': article.get('urlToImage', None),  # Corrected key here
+                'image_url': article.get('urlToImage', None),
             }
             for article in articles
         ]
