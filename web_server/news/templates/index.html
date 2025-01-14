@@ -10,14 +10,17 @@
         /* Ensure the article card is clickable */
         .news-card {
             cursor: pointer;
-            text-decoration: none; /* Remove underline on text */
-            color: inherit; /* Inherit text color for links */
+            /* Remove underline on text */
+            text-decoration: none;
+            /* Inherit text color for links */
+            color: inherit;
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
         /* Add hover effect for the card */
         .news-card:hover {
-            transform: scale(1.02); /* Slightly enlarge on hover */
+            /* Slightly enlarge on hover */
+            transform: scale(1.02);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
     </style>
@@ -36,7 +39,6 @@
             <a href="{{ article.url }}" target="_blank" class="news-card">
                 <article>
                     <h2 class="news-title">{{ article.title }}</h2>
-                    <p class="date">Published: {{ article.published_date|date:"F d, Y H:i" }}</p>
 
                     <!-- Embed image directly from the URL -->
                     {% if article.image_url %}
